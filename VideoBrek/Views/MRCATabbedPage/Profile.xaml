@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="VideoBrek.Views.MRCATabbedPage.Profile" BackgroundColor="Black">
+    <ContentPage.Content>
+        <TableView BackgroundColor="Black" Margin="0" Intent="Settings" HasUnevenRows="True">
+            <TableRoot>
+                <TableSection TextColor="#1976D2" AbsoluteLayout.LayoutBounds="0,100,0,0">
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#111111" HeightRequest="80" Padding="20">
+                            <Grid Padding="0,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Frame VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Movie Tile Card" Style="{StaticResource MovieCardFrame}">
+                                    <ffimageloading:CachedImage  HeightRequest="50" WidthRequest="50" Style="{StaticResource FastImageStyle}" DownsampleToViewSize="true" Source="icon" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                                </Frame>
+                                <StackLayout  Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand">
+                                    <Label MaxLines="1" Text="{Binding UserProfileDetails.Email}" Style="{StaticResource MovieCardTitle}" />
+                                    <Label MaxLines="1" Text="{Binding UserProfileDetails.PhoneNumber}" Style="{StaticResource MovieCardYear}" />
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection  TextColor="#1976D2" Title="Display Name">
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" BackgroundColor="#111111" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label  Text="{Binding UserProfileDetails.FullName}" TextColor="White" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection TextColor="#1976D2" Title="App Setting">
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Allow Location" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.AllowLocation}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
+                    </ViewCell>
+                    <!--#41cd50-->
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Hide continue watching row" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.HideContinueWatchingRow}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Enable light theme" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.EnableLightTheme}" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection TextColor="#1976D2" Title="Download settings">
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Only download over Wi-Fi" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.DownloadOnlyOverWiFi}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection TextColor="#1976D2" Title="Playback settings">
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Stream quality" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Label Margin="30,0" Text="Mediaum (360p)" TextColor="DarkGray" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Begin playback autimatically" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.BeginPlaybackAutomatically}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Autoplay next video" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.AutoplayNextVideo}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Background audio playback" TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <Switch OnColor="#41cd50" ThumbColor="White" IsToggled="{Binding UserProfileDetails.UserProfileConfig.BackgroundAudioPlayBack}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior Command="{Binding Toggled}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection TextColor="#1976D2" Title="Get in touch">
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Contact support" TextColor="White" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Height="44">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Rate this app" TextColor="White" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection TextColor="#1976D2" Title="About">
+                    <ViewCell  Height="44" Tapped="privacyPolicyViewCellTapped">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Privacy policy" TextColor="White" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection TextColor="#1976D2" Title="Account">
+                    <ViewCell Height="44" Tapped="OnlogOutViewCellTapped">
+                        <StackLayout Padding="20,5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#111111">
+                            <Label  Text="Sign out" TextColor="White" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="#111111" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="VideoBrek.Views.MediaDetails.MediaDetails" NavigationPage.HasBackButton="False">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="X" Command="{Binding ClosedPresentPage}" />
+    </ContentPage.ToolbarItems>-->
+    <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+        <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0,0,0,0" Margin="0">
+            <StackLayout HeightRequest="200" Orientation="Vertical" Padding="0,0,0,0" Margin="0">
+                <AbsoluteLayout x:Name="ViewLayout" HeightRequest="200">
+                    <ffimageloading:CachedImage Style="{StaticResource FastImageStyle}" Source="{Binding SelectedAllMedia.AliasThumbURL}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
+                    <AbsoluteLayout  VerticalOptions="Center" HorizontalOptions="Center" x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <Button ImageSource="ic_VideoPlay.png" CornerRadius="25" HeightRequest="50" Padding="15,5,10,5" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Clicked="VideoPlay_Clicked" BackgroundColor="#66000000" TextColor="White" x:Name="btnNext" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout  VerticalOptions="Start" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Padding="10">
+                        <Button  Command="{Binding ClosedPresentPage}" FontSize="Medium" Text="X" FontAttributes="Bold" CornerRadius="13" HeightRequest="26" Padding="0" WidthRequest="26" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#6600" TextColor="White" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                    </AbsoluteLayout>
+                </AbsoluteLayout>
+            </StackLayout>
+            <StackLayout BackgroundColor="Black" Orientation="Vertical" Padding="0,0,0,0" Margin="0">
+                <Label Margin="10,10,0,0" MaxLines="2" Text="{Binding SelectedAllMedia.Title}" Style="{StaticResource MovieCardTitle}" />
+                <StackLayout  Spacing="25" HeightRequest="55" Orientation="Horizontal" Padding="20,0,20,10" Margin="20,0" HorizontalOptions="EndAndExpand">
+                    <StackLayout x:Name="stackLayoutForAddMyList" VerticalOptions="FillAndExpand" HeightRequest="40" Orientation="Vertical" HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference stackLayoutForAddMyList}, Path=BindingContext.AddToMyListViewTap}" />
+                        </StackLayout.GestureRecognizers>
+                        <Image x:Name="iAddToMyList" Source="{Binding AddToMyListIconSource}" Aspect="AspectFit" WidthRequest="30" />
+                        <Label Text="{Binding AddToMyListIconText}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" VerticalTextAlignment="Center" Style="{StaticResource MovieCardYear}" TextColor="White" />
+                    </StackLayout>
+                    <StackLayout x:Name="stackLayoutForShare" VerticalOptions="FillAndExpand" HeightRequest="40" Orientation="Vertical" HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference stackLayoutForShare}, Path=BindingContext.ShareViewTap}" />
+                        </StackLayout.GestureRecognizers>
+                        <!--<Button ImageSource="ic_MyList.png" ContentLayout="Top,0" TextColor="LightGray" Text="My List" WidthRequest="50" />-->
+                        <Image Aspect="AspectFit" Source="ic_Share.png" WidthRequest="30" />
+                        <Label VerticalOptions="EndAndExpand" Text="Share" HorizontalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MovieCardYear}" TextColor="White" />
+                    </StackLayout>
+                </StackLayout>
+                <BoxView HeightRequest="0.3" BackgroundColor="{StaticResource ColorDarkGray}" />
+                <Label Margin="10" Text="{Binding SelectedAllMedia.Description}" Style="{StaticResource NormalTitle}" />
+            </StackLayout>
+            <!--<StackLayout HeightRequest="200" Orientation="Vertical" Padding="0,0,0,0" Margin="0">
+                <AbsoluteLayout x:Name="ViewLayout" HeightRequest="200">
+                    <Image Aspect="Fill" Style="{StaticResource FastImageStyle}" Source="ThinkstockPhotos.jpg" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
+                    <AbsoluteLayout  VerticalOptions="Center" HorizontalOptions="Center" x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <Button ImageSource="ic_VideoPlay.png" CornerRadius="25" HeightRequest="50" Padding="15,0,10,0" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Clicked="VideoPlay_Clicked" BackgroundColor="#6600" TextColor="White" x:Name="btnNext" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout  VerticalOptions="Start" HorizontalOptions="End" x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Padding="10">
+                        <Button   FontSize="Medium" Text="X" FontAttributes="Bold" CornerRadius="13" HeightRequest="26" Padding="0" WidthRequest="26" HorizontalOptions="Center" VerticalOptions="Center" Clicked="VideoPlay_Clicked" BackgroundColor="#6600" TextColor="White" x:Name="btnNext" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                    </AbsoluteLayout>
+                </AbsoluteLayout>
+            </StackLayout>-->
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

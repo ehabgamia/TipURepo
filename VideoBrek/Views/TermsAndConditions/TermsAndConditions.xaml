@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:renderers="clr-namespace:VideoBrek.Extensions" x:Class="VideoBrek.Views.TermsAndConditions.TermsAndConditions" NavigationPage.HasBackButton="False">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="X" Command="{Binding ClosedPresentPage}" />
+    </ContentPage.ToolbarItems>-->
+    <!--<NavigationPage.TitleView>
+        <Label Text="Software license and Agreement" Style="{StaticResource ItemPageLabel}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+            <Label.Margin>
+                <Thickness  Left="30" />
+            </Label.Margin>
+        </Label>
+    </NavigationPage.TitleView>-->
+    <ContentPage.Content>
+        <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <renderers:GradientLayout  Orientation="Vertical" ColorsList="#1976D2,#061519" Mode="ToBottom" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <renderers:GradientLayout.Padding>
+                    <Thickness  Left="10" Right="10" Top="20" Bottom="20" />
+                </renderers:GradientLayout.Padding>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="30">
+                    <!--<Label Margin="0,7,0,0" Text="Software license and Agreement" Style="{StaticResource ItemPageLabel}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />-->
+                    <Label Text="Software license and Agreement" Style="{StaticResource ItemPageLabel}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                        <Label.Margin>
+                            <Thickness  Left="30" />
+                        </Label.Margin>
+                    </Label>
+                    <Button Command="{Binding ClosedPresentPage}" FontSize="Medium" Text="X" FontAttributes="Bold" CornerRadius="13" HeightRequest="26" Padding="0" WidthRequest="26" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#6600" TextColor="White" x:Name="btnNext" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"></Button>
+                </StackLayout>
+                <WebView  BackgroundColor="White" x:Name="webTermsandConditions" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <WebView.Source>
+                        <HtmlWebViewSource Html="{Binding TermsAndConditionText}" />
+                    </WebView.Source>
+                </WebView>
+                <StackLayout IsVisible="{Binding IsVisibleContinueBtn}" x:Name="stackLayoutForSwitch" Margin="0,10" Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference stackLayoutForSwitch}, Path=BindingContext.SwitchViewTap}" CommandParameter="{Binding IsOnSwitch}" />
+                    </StackLayout.GestureRecognizers>
+                    <Switch OnColor="#41cd50" ThumbColor="White" x:Name="stTAC" IsToggled="{Binding IsOnSwitch}" VerticalOptions="Center" />
+                    <Label Margin="0,0,0,0" Text="Agree to the above terms and condition" Style="{StaticResource MovieCardTitle}" VerticalOptions="Center" />
+                </StackLayout>
+                <Button x:Name="btnContinue" IsVisible="{Binding IsVisibleContinueBtn}" Command="{Binding ContinueClicked}" VerticalOptions="End" Style="{StaticResource Accent2ColorButtonStyle}" Text="Continue" />
+            </renderers:GradientLayout>
+            <ContentView x:Name="popupLoadingView" BackgroundColor="#6600" Padding="10, 0" IsVisible="{Binding IsLoading}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ActivityIndicator x:Name="activityIndicator"  IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="DarkBlue" WidthRequest="50" HeightRequest="50"></ActivityIndicator>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

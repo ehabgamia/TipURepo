@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage BackgroundColor="Gray" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:views="clr-namespace:VideoBrek.Views" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:renderers="clr-namespace:VideoBrek.Extensions" x:Class="VideoBrek.Views.MainPage">
+
+    <renderers:GradientLayout Orientation="Vertical" ColorsList="#1976D2,#061519" Mode="ToBottom" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <renderers:GradientLayout.Padding>
+            <Thickness Left="{StaticResource Default2Margin}" Right="{StaticResource Default2Margin}" />
+        </renderers:GradientLayout.Padding>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource AkagiProExtraBold}" FontAttributes="Bold" FontSize="40" Text="MRCA" TextColor="White" />
+            </StackLayout>
+            <StackLayout  Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="5*" />
+                    </Grid.RowDefinitions>
+                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1">
+                        <Label FontFamily="{StaticResource AkagiProExtraBold}" Text="Start Watching" FontAttributes="Bold" FontSize="25" TextColor="White" />
+                        <Label FontFamily="{StaticResource AkagiProExtraBold}" Text="MRCA" FontAttributes="Bold" FontSize="25" TextColor="White" />
+                        <Label FontFamily="{StaticResource AkagiProMedium}" Text="Start exploring our catalog of videos for free or subscribe to instantly start watching." FontSize="11" TextColor="{StaticResource ColorDarkGray}" />
+                        <Button Clicked="RegisterHereButton_Clicked" Style="{StaticResource Accent2ColorButtonStyle}" Text="Register here" Margin="0,2,0,0" />
+                        <Button Clicked="LogInButton_Clicked" Style="{StaticResource TransparentButtonStyle}" Text="Log in" Margin="0,2,0,0" />
+                        <!--<Button Clicked="ExistingButton_Clicked" Style="{StaticResource TransparentButtonStyle}" BackgroundColor="Transparent" Text="Link your existing Google Play subscription" TextColor="White" FontSize="11" />-->
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </renderers:GradientLayout>
+
+    <!-- Your content -->
+</ContentPage>

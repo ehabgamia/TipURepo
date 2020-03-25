@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="#111111" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="VideoBrek.Views.MRCATabbedPage.Explore.Explore">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <controls:PullToRefreshLayout IsPullToRefreshEnabled="True" RefreshCommand="{Binding OnPullDownRefresh}" IsRefreshing="{Binding IsLoading}" RefreshColor="Blue">
+                    <CollectionView x:Name="collectionViewMain" Header="{Binding}" Margin="0,25,0,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" ItemsLayout="VerticalList" ItemsSource="{Binding  CollectionViewDataSource}">
+                        <CollectionView.HeaderTemplate  >
+                            <DataTemplate >
+                                <StackLayout Margin="0,0,0,20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <StackLayout   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                        <CarouselView x:Name="carouselViewMain" IndicatorView="indicatorView" HeightRequest="400" HorizontalScrollBarVisibility="Never" ItemsSource="{Binding CarouselViewDataSource}" Position="{Binding Position, Mode=TwoWay}">
+                                            <CarouselView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <AbsoluteLayout x:Name="ViewLayout">
+                                                        <AbsoluteLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference carouselViewMain}, Path=BindingContext.ViewItemTap}" CommandParameter="{Binding .}" />
+                                                        </AbsoluteLayout.GestureRecognizers>
+                                                        <ffimageloading:CachedImage Aspect="Fill" Style="{StaticResource FastImageStyle}" Source="{Binding AliasThumbURL}" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
+                                                        <AbsoluteLayout x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,.30" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#66000000">
+                                                            <StackLayout Margin="0,0,0,7" Padding="0,0,0,10" Orientation="Vertical" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1">
+                                                                <Label LineBreakMode="TailTruncation" VerticalOptions="EndAndExpand" Style="{StaticResource ItemPageLabelForCarouselView}" Text="{Binding Title}" MaxLines="2" AbsoluteLayout.LayoutBounds="1,1,1,.50" AbsoluteLayout.LayoutFlags="All" Padding="10,0" />
+                                                                <Button Style="{StaticResource PlayNowButtonStyle}" VerticalOptions="EndAndExpand" Text="Play Now" Command="{Binding Source={x:Reference carouselViewMain}, Path=BindingContext.PlayNowButtonClicked}" CommandParameter="{Binding .}" />
+                                                            </StackLayout>
+                                                        </AbsoluteLayout>
+                                                    </AbsoluteLayout>
+                                                </DataTemplate>
+                                            </CarouselView.ItemTemplate>
+                                        </CarouselView>
+                                        <IndicatorView x:Name="indicatorView"
+          IndicatorColor="White"
+          SelectedIndicatorColor="Gray"
+          IndicatorSize="7" HorizontalOptions="Center" Margin="0,-18,0,10" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.HeaderTemplate>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout HeightRequest="185" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0,0,0,0" Margin="0,0,0,0">
+                                    <Label Margin="10,10,0,-10" MaxLines="2" Text="{Binding CategoryName}" Style="{StaticResource ItemPageLabel}" />
+                                    <CollectionView x:Name="collectionViewMain1" HorizontalScrollBarVisibility="Never" ItemsLayout="HorizontalList" ItemsSource="{Binding Media}">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0,0,0,0" Margin="0">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference collectionViewMain}, Path=BindingContext.ViewItemTap}" CommandParameter="{Binding .}" />
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Frame VerticalOptions="FillAndExpand" Padding="0" WidthRequest="175" AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Movie Tile Card" Style="{StaticResource MovieCardFrame}">
+                                                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0" Margin="0" Style="{StaticResource MovieCardBackgroundColor}">
+                                                            <ffimageloading:CachedImage  HeightRequest="90" Style="{StaticResource FastImageStyle}" Source="{Binding AliasThumbURL}" HorizontalOptions="FillAndExpand" />
+                                                            <Label  MaxLines="2" Text="{Binding Title}" Style="{StaticResource MovieCardTitle}" />
+                                                        </StackLayout>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </controls:PullToRefreshLayout>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsLoaderRunning}" BackgroundColor="Black" Opacity="0.5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ActivityIndicator 
+                IsRunning="{Binding IsLoaderRunning}" 
+                IsVisible="{Binding IsLoaderRunning}" 
+                Color="#FA515E"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="50"
+                WidthRequest="50"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

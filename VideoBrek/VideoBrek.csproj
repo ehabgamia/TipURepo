@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Refractored.XamForms.PullToRefresh" Version="2.4.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Prism.Forms" Version="7.2.0.1422" />
+    <PackageReference Include="Octane.Xam.VideoPlayer" Version="3.1.0" />
+    <PackageReference Include="Plugin.Toast" Version="2.1.2" />
+    <PackageReference Include="modernhttpclient" Version="2.4.2" />
+    <PackageReference Include="AsyncAwaitBestPractices" Version="4.1.0" />
+    <PackageReference Include="YoutubeExplode" Version="4.7.16" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\MRCATabbedPage\" />
+    <Folder Include="Views\MRCATabbedPage\LibraryPages\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Views\LogIn\" />
+    <Folder Include="Views\SignUp\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="ViewModels\MainPage\" />
+    <Folder Include="ViewModels\LogIn\" />
+    <Folder Include="ViewModels\SignUp\" />
+    <Folder Include="PCL\" />
+    <Folder Include="PCL\Common\" />
+    <Folder Include="PCL\Helper\" />
+    <Folder Include="ViewModels\MRCATabbedPage\" />
+    <Folder Include="Views\MRCATabbedPage\Explore\" />
+    <Folder Include="ViewModels\MRCATabbedPage\Explore\" />
+    <Folder Include="ViewModels\MRCATabbedPage\LibraryPages\" />
+    <Folder Include="Views\TermsAndConditions\" />
+    <Folder Include="PCL\Service\" />
+    <Folder Include="Views\CustomPages\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Views\MediaDetails\" />
+    <Folder Include="ViewModels\MRCATabbedPage\MediaDetails\" />
+    <Folder Include="Behaviour\" />
+    <Folder Include="Base\" />
+    <Folder Include="Validator\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="**/*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Base\BaseContentPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Base\BaseContentPage.cs" />
+    <None Remove="ViewModels\MRCATabbedPage\Explore\ExploreViewModel.cs" />
+    <None Remove="Views\MRCATabbedPage\Search.xaml.cs" />
+    <None Remove="Views\MRCATabbedPage\Explore\Explore.xaml.cs" />
+    <None Remove="Views\Home\Home.xaml.cs" />
+    <None Remove="Views\MediaDetails\VideoPlay.xaml.cs" />
+    <None Remove="Resources\MediaData.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MediaData.json" />
+  </ItemGroup>
+</Project>

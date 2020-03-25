@@ -1,0 +1,246 @@
+﻿{
+  "status": 200,
+  "message": "Success",
+  "response": [
+    {
+      "categoryName": "Nature Video",
+      "displayOrder": 1,
+      "media": [
+        {
+          "id": 1,
+          "cloudUrl": "XEfDYMngJeE",
+          "title": "Beautiful Relaxing Music: Norway's Nature, Violin Music, Flute Music, Piano Music, Harp Music ★124"
+        },
+        {
+          "id": 2,
+          "cloudUrl": "SN3xlcjbvUo",
+          "title": "Relaxing Sleep Music and Night Nature Sounds: Soft Crickets, Beautiful Piano, Deep Sleep Music"
+        },
+        {
+          "id": 3,
+          "cloudUrl": "6pxRHBw-k8M",
+          "title": "10 Incredible 4K (Ultra HD) Videos"
+        },
+        {
+          "id": 4,
+          "cloudUrl": "BHACKCNDMW8",
+          "title": "3 HOURS of AMAZING NATURE SCENERY on Planet Earth - The Best Relax Music - 1080p HD"
+        }
+      ]
+    },
+    {
+      "categoryName": "Covid 19 Updates",
+      "displayOrder": 2,
+      "media": [
+        {
+          "id": 5,
+          "cloudUrl": "WdUC72g5xS4",
+          "title": "COVID-19 Updates From Delhi, Bengaluru, & Mumbai | CNN News18"
+        },
+        {
+          "id": 6,
+          "cloudUrl": "h34z6hS52YM",
+          "title": "Coronavirus Expert Dr. Fauci And CDC Head Dr. Redfield Testify Before House | NBC News (Live Stream)"
+        },
+        {
+          "id": 7,
+          "cloudUrl": "jLUzZJ2wr_s",
+          "title": "107 Coronavirus Positive Cases in India as Maharashtra & Kerala Sees Surge"
+        },
+        {
+          "id": 8,
+          "cloudUrl": "VrFG1GGNe9o",
+          "title": "DNA: Coronavirus के ख़िलाफ़ भारत की 'डरो नहीं करो' नीति का विश्लेषण | Sudhir Chaudhary"
+        }
+      ]
+    },
+    {
+      "categoryName": "Biography",
+      "displayOrder": 3,
+      "media": [
+        {
+          "id": 9,
+          "cloudUrl": "zZnuig6x0eo",
+          "title": "Bill Gates"
+        },
+        {
+          "id": 10,
+          "cloudUrl": "7XFZD5frKJc",
+          "title": "Albert Einstein"
+        },
+        {
+          "id": 11,
+          "cloudUrl": "bKUOzm-goxE",
+          "title": "Stephen Hawking"
+        },
+        {
+          "id": 12,
+          "cloudUrl": "PVuXLazABEQ",
+          "title": "Cristiano Ronaldo"
+        }
+      ]
+    },
+    {
+      "categoryName": "Bollywood Audio",
+      "displayOrder": 5,
+      "media": [
+        {
+          "id": 13,
+          "cloudUrl": "kpJZHtp8VkE",
+          "title": "Happy Valentine 2020 | Old Vs New Bollywood Mashup Songs 2020 | New Hindi Mashup Songs 2020"
+        },
+        {
+          "id": 14,
+          "cloudUrl": "syhNWVSsP20",
+          "title": "The Love Bollywood Mashup Songs 2020 | Romantic Mashup Songs 2020 | Best Indian Mashup Songs 2020"
+        },
+        {
+          "id": 15,
+          "cloudUrl": "Hzmp3z6deF8",
+          "title": "Tera Yaar Hoon Main - अरिजीत सिंह न्यू हिट गाने - अरिजीत सिंह सुपर 20 बॉलीवुड गाने - नवीनतम गाने"
+        },
+        {
+          "id": 16,
+          "cloudUrl": "U9kjpJYxO9Q",
+          "title": "💕 VALENTINES DAY SPECIAL 2020 ❤️ HEART TOUCHING JUKEBOX💕|BEST SONGS COLLECTION ❤️BOLLYWOOD ROMANTIC💕"
+        }
+      ]
+    },
+    {
+      "categoryName": "English Audio",
+      "displayOrder": 4,
+      "media": [
+        {
+          "id": 17,
+          "cloudUrl": "XZDA2XrwenY",
+          "title": "Top Hits 2019 ♥ The Most Popular Songs 2019 ♥ Best English Songs 2019"
+        },
+        {
+          "id": 18,
+          "cloudUrl": "pioizAsehlk",
+          "title": "Best Romantic Songs Love Songs Playlist 2017 Great English Love Songs Collection HD"
+        },
+        {
+          "id": 19,
+          "cloudUrl": "v6qbMNdgVLk",
+          "title": "BEST English Music Cover 2018 Hit Popular Acoustic Songs Country Songs Top 40 Songs This Week"
+        },
+        {
+          "id": 20,
+          "cloudUrl": "4MBVJ1ZEbVA",
+          "title": "Best English Songs Remixes 2019 Hits - New Mashup Of Popular Songs - Best Pop Songs Remixes 2019"
+        },
+        {
+          "id": 21,
+          "cloudUrl": "Ht5ZzQzPJTE",
+          "title": "TOP SONGS BEST ♫ Songs Covers 2017 - 2018 Hits Remixes Cover of Poular Songs Love Songs"
+        }
+      ]
+    },
+    {
+      "categoryName": "English Video",
+      "displayOrder": 6,
+      "media": [
+        {
+          "id": 22,
+          "cloudUrl": "Bl0iqXDGo_s",
+          "title": "Shalom Charles - You are my Rock (Official Music and Lyrical Video)"
+        },
+        {
+          "id": 23,
+          "cloudUrl": "juC3QgV2xhk",
+          "title": "Best English DJ HD song"
+        },
+        {
+          "id": 24,
+          "cloudUrl": "kffacxfA7G4",
+          "title": "Justin Bieber - Baby ft. Ludacris (Official Music Video)"
+        },
+        {
+          "id": 25,
+          "cloudUrl": "AJtDXIazrMo",
+          "title": "Ellie Goulding - Love Me Like You Do (Official Video)"
+        }
+      ]
+    },
+    {
+      "categoryName": "Bollywood Video",
+      "displayOrder": 7,
+      "media": [
+        {
+          "id": 26,
+          "cloudUrl": "BWiCphIy7-0",
+          "title": "Dhundte Hain Hum Tumko Darbadar | TikTok Famous Song 2019 | Hum Ko Sirf Tumse Pyar Hain New Version"
+        },
+        {
+          "id": 27,
+          "cloudUrl": "9WNhZteHj2g",
+          "title": "Ek Chumma Full Video Song | Housefull 4 | New Bollywood Songs 2019 | Latest New Hindi Songs 2019"
+        },
+        {
+          "id": 28,
+          "cloudUrl": "XoUs5FGa0JU",
+          "title": "Wafa ne Bewafai – Tera Suroor | Arijit Singh"
+        },
+        {
+          "id": 29,
+          "cloudUrl": "dfNdRsNSFx4",
+          "title": "A.R. Rahman - Hosanna Best Video|Ekk Deewana Tha|Amy Jackson|Prateik Babar|Leon|Suzanne"
+        }
+      ]
+    },
+    {
+      "categoryName": "SCI-FI Movies Trailer",
+      "displayOrder": 8,
+      "media": [
+        {
+          "id": 30,
+          "cloudUrl": "3ijQHDFw6s4",
+          "title": "SEE Official Trailer (2019) Jason Momoa, Sci-Fi Series HD"
+        },
+        {
+          "id": 31,
+          "cloudUrl": "oM8dJXZUsRI",
+          "title": "EVERY TIME I DIE Official Trailer 2 (2019) Sci-Fi, Horror Movie"
+        },
+        {
+          "id": 32,
+          "cloudUrl": "zF3VsTjoQS0",
+          "title": "3022 Official Trailer (2019) Sci-Fi Movie"
+        },
+        {
+          "id": 33,
+          "cloudUrl": "Z9-xnelobwo",
+          "title": "REALIVE Trailer (2017) Science-Fiction Movie"
+        }
+      ]
+    },
+    {
+      "categoryName": "Official Trailer (HD)",
+      "displayOrder": 9,
+      "media": [
+        {
+          "id": 34,
+          "cloudUrl": "K21rj6FmXmQ",
+          "title": "COUNTDOWN Official Trailer (2019) Horror Movie"
+        },
+        {
+          "id": 35,
+          "cloudUrl": "0NsBor0jY6Y",
+          "title": "BLOODSHOT Official Trailer (2020) Vin Diesel, Superhero Movie HD"
+        },
+        {
+          "id": 36,
+          "cloudUrl": "mzIsfSsZh7I",
+          "title": "The Best Upcoming ACTION Movies 2019 & 2020 (Trailer)"
+        },
+        {
+          "id": 37,
+          "cloudUrl": "IjHgzkQM2Sg",
+          "title": "The Mummy - Official Trailer (HD)"
+        }
+      ]
+    }
+
+  ]
+}
