@@ -27,6 +27,7 @@ namespace VideoBrek.ViewModels.Explore
     {
         public MediaDetailsViewModel(INavigation navigation)
         {
+            MessagingCenter.Send(this, "preventLandScape");
             Navigation = navigation;
 
           

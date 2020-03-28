@@ -22,26 +22,14 @@ namespace VideoBrek.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            switch (Device.Idiom)
-            {
-                case TargetIdiom.Phone:
-                    RequestedOrientation = ScreenOrientation.Portrait;
-                    break;
-                case TargetIdiom.Tablet:
-                    RequestedOrientation = ScreenOrientation.Portrait;
-                    break;
-            }
-
-            //Setup additional stuff that you need
-
             //Calls from the view that should rotate
-            MessagingCenter.Subscribe<VideoPlay>(this, "graphic", sender =>
+            MessagingCenter.Subscribe<VideoPlay>(this, "allowLandScape", sender =>
             {
                 OnConfigurationChanged(new Configuration() { Orientation = Orientation.Landscape });
             });
 
             //When the page is closed this is called
-            MessagingCenter.Subscribe<VideoPlay>(this, "return", sender =>
+            MessagingCenter.Subscribe<VideoPlay>(this, "preventLandScape", sender =>
             {
                 OnConfigurationChanged(new Configuration() { Orientation = Orientation.Portrait });
             });
@@ -64,7 +52,6 @@ namespace VideoBrek.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        [System.Obsolete]
         public override void OnConfigurationChanged(Configuration newConfig)
         {
             base.OnConfigurationChanged(newConfig);
@@ -72,28 +59,16 @@ namespace VideoBrek.Droid
             switch (newConfig.Orientation)
             {
                 case Orientation.Landscape:
-                    LockRotation(Orientation.Landscape);
+                    RequestedOrientation = ScreenOrientation.Landscape;
                     Forms.SetTitleBarVisibility(AndroidTitleBarVisibility.Never);
                     break;
                 case Orientation.Portrait:
                     Forms.SetTitleBarVisibility(AndroidTitleBarVisibility.Default);
-                    LockRotation(Orientation.Portrait);
-                    break;
-
-            }
-        }
-
-        private void LockRotation(Orientation orientation)
-        {
-            switch (orientation)
-            {
-                case Orientation.Portrait:
                     RequestedOrientation = ScreenOrientation.Portrait;
                     break;
-                case Orientation.Landscape:
-                    RequestedOrientation = ScreenOrientation.Landscape;
-                    break;
+
             }
         }
+
     }
 }

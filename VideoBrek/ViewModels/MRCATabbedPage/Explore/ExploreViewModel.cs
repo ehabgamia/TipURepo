@@ -195,7 +195,7 @@ namespace VideoBrek.ViewModels.Explore
                     if (VideoMediaStreamInfos.Muxed.FirstOrDefault() != null)
                     {
                         allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Muxed.FirstOrDefault().Url;
-                        await Navigation.PushModalAsync(new CustomNavigationPage(new MediaDetails(allMediaModel)));
+                        await Navigation.PushModalAsync(new NavigationPage(new MediaDetails(allMediaModel)));
                         IsLoaderRunning = false;
                     }
                 });

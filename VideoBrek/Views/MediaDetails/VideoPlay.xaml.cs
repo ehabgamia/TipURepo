@@ -31,16 +31,16 @@ namespace VideoBrek.Views.MediaDetails
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            MessagingCenter.Send(this, "graphic");
+            MessagingCenter.Send(this, "allowLandScape");
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Send(this, "return"); //during page close setting back to portrait 
+            MessagingCenter.Send(this, "preventLandScape"); //during page close setting back to portrait 
         }
 
-       
+
 
     }
 }

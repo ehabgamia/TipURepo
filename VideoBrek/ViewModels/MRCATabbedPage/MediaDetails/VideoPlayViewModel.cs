@@ -81,10 +81,11 @@ namespace VideoBrek.ViewModels.MRCATabbedPage.MediaDetails
                 await Task.Run(() =>
                 {
                     IsLoading = true;
-                    Device.BeginInvokeOnMainThread(async () =>
-                    {
-                        await Navigation.PopAsync(true);
-                    });
+                    //Device.BeginInvokeOnMainThread(async () =>
+                    //{
+                    //    await Navigation.PopAsync(true);
+                    //});
+                     Navigation.PopAsync(true);
                 });
             }
             catch (Exception ex)
