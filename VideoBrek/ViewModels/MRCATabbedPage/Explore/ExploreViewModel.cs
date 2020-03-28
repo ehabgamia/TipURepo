@@ -175,7 +175,7 @@ namespace VideoBrek.ViewModels.Explore
             }
         }
 
-        private void gotoMediaDetails(AllMediaModel allMediaModel = null)
+        private void gotoMediaDetails(AllMediaModel allMediaModel)
         {
             if (IsLoaderRunning)
                 return;
