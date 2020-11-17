@@ -1,13 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using VideoBrek.Extensions;
+﻿using System.ComponentModel;
 using VideoBrek.ViewModels.MRCATabbedPage.MediaDetails;
 using Xamarin.Forms;
-using YoutubeExplode;
-using YoutubeExplode.Models.MediaStreams;
 using static VideoBrek.Models.MediaHandlerModel;
 
 namespace VideoBrek.Views.MediaDetails

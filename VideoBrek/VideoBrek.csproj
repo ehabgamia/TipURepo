@@ -19,7 +19,7 @@
     <PackageReference Include="Octane.Xam.VideoPlayer" Version="3.1.0" />
     <PackageReference Include="Plugin.Toast" Version="2.1.2" />
     <PackageReference Include="AsyncAwaitBestPractices" Version="4.1.0" />
-    <PackageReference Include="YoutubeExplode" Version="4.7.16" />
+    <PackageReference Include="YoutubeExplode" Version="5.0.0" />
     <PackageReference Include="modernhttpclient" Version="2.4.2" />
   </ItemGroup>
   <ItemGroup>

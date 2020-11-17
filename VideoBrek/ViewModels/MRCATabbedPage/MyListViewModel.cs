@@ -175,13 +175,13 @@ namespace VideoBrek.ViewModels.MRCATabbedPage
                         allMediaModel.Title = GetVideo.Title;
                         allMediaModel.Description = GetVideo.Description;
                     }
-                    var VideoMediaStreamInfos = await Task.Run(() => GetVideoMediaStreamInfosAsync(allMediaModel.CloudUrl));
-                    if (VideoMediaStreamInfos.Muxed.FirstOrDefault() != null)
-                    {
-                        allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Muxed.FirstOrDefault().Url;
-                        await Navigation.PushModalAsync(new NavigationPage(new Views.MediaDetails.MediaDetails(allMediaModel)));
-                        IsLoaderRunning = false;
-                    }
+                    //var VideoMediaStreamInfos = await Task.Run(() => GetVideoMediaStreamInfosAsync(allMediaModel.CloudUrl));
+                    //if (VideoMediaStreamInfos.Muxed.FirstOrDefault() != null)
+                    //{
+                    //    allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Muxed.FirstOrDefault().Url;
+                    //    await Navigation.PushModalAsync(new NavigationPage(new Views.MediaDetails.MediaDetails(allMediaModel)));
+                    //    IsLoaderRunning = false;
+                    //}
 
 
                         //AllMediaModel allMediaModel = new AllMediaModel();

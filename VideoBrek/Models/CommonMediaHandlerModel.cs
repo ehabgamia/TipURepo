@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using VideoBrek.Extensions;
 using YoutubeExplode;
-using YoutubeExplode.Models;
-using YoutubeExplode.Models.MediaStreams;
+using YoutubeExplode.Videos;
 
 namespace VideoBrek.Models
 {
@@ -87,7 +86,7 @@ namespace VideoBrek.Models
             youtubeClient = new YoutubeClient();
             try
             {
-                resp = await youtubeClient.GetVideoAsync(Url);
+                resp = await youtubeClient.Videos.GetAsync(Url);
                 return resp;
             }
             catch (Exception ex)
@@ -97,20 +96,20 @@ namespace VideoBrek.Models
             }
         }
 
-        public static async Task<MediaStreamInfoSet> GetVideoMediaStreamInfosAsync(string Url)
-        {
-            youtubeClient = new YoutubeClient();
-            MediaStreamInfoSet resp = null;
-            try
-            {
-                resp = await youtubeClient.GetVideoMediaStreamInfosAsync(Url);
-                return resp;
-            }
-            catch (Exception ex)
-            {
-                //Crashes.TrackError(ex);
-                return resp;
-            }
-        }
+        //public static async Task<MediaStreamInfoSet> GetVideoMediaStreamInfosAsync(string Url)
+        //{
+        //    youtubeClient = new YoutubeClient();
+        //    MediaStreamInfoSet resp = null;
+        //    try
+        //    {
+        //        resp = await youtubeClient.GetVideoMediaStreamInfosAsync(Url);
+        //        return resp;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //Crashes.TrackError(ex);
+        //        return resp;
+        //    }
+        //}
     }
 }

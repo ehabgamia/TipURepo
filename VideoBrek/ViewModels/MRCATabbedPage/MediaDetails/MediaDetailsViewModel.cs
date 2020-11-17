@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -7,18 +6,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using VideoBrek.Extensions;
 using VideoBrek.Models;
-using VideoBrek.PCL.Common;
-using VideoBrek.PCL.Service;
-using VideoBrek.ViewModels.MRCATabbedPage;
-using VideoBrek.Views.CustomPages;
 using VideoBrek.Views.MediaDetails;
-using Newtonsoft.Json;
 using Plugin.Toast;
 using Plugin.Toast.Abstractions;
 using Xamarin.Forms;
-using YoutubeExplode;
-using YoutubeExplode.Models;
-using YoutubeExplode.Models.MediaStreams;
 using static VideoBrek.Models.MediaHandlerModel;
 
 namespace VideoBrek.ViewModels.Explore
