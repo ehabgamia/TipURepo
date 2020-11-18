@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage  BackgroundColor="#111111" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh" xmlns:control="http://xamarin.com/schemas/2014/forms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local="clr-namespace:VideoBrek.Extensions" x:Class="VideoBrek.Views.MRCATabbedPage.MyList" Title="My List">
+<ContentPage  BackgroundColor="#111111"
+              xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+              xmlns:control="http://xamarin.com/schemas/2014/forms"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+              xmlns:local="clr-namespace:VideoBrek.Extensions"
+              x:Class="VideoBrek.Views.MRCATabbedPage.MyList"
+              Title="My List">
     <ContentPage.Content>
         <Grid>
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -39,6 +47,47 @@
                 HeightRequest="50"
                 WidthRequest="50"/>
             </StackLayout>
+            <!--Edit to MyList Code-->
+            <StackLayout Padding="0">
+                <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0">
+                            <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                <Image Source="imMRbean" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                           <Label Text="Mr.Bean's Holiday" FontAttributes="Bold" VerticalOptions="FillAndExpand" TextColor="White" FontSize="18"/>
+                           <Label Text="Comedy.2007.U.English Audio." VerticalOptions="FillAndExpand" TextColor="White" FontSize="12"/>
+                           <Label Text="Actors : Rowan Atkinson, Emma De Caunse, Jean Rochefort." VerticalOptions="FillAndExpand" TextColor="White" FontSize="12"/>
+                           <Label Text="Director : Steve Bendelack." VerticalOptions="FillAndExpand" TextColor="White" FontSize="12"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <Frame>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0">
+                            <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                <Image Source="AKCorona" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+            </StackLayout>
+                
+
         </Grid>
+
+        
     </ContentPage.Content>
 </ContentPage>
