@@ -18,6 +18,8 @@ namespace VideoBrek.Views.MediaDetails
            
             base.BindingContext = vm = new VideoPlayViewModel(Navigation);
             vm.SelectedAllMedia = allMediaModel;
+            videoPlayer.Source = vm.SelectedAllMedia.AliasCloudUrl;
+            //vm.SelectedAllMedia.AliasCloudUrl = "http://vjs.zencdn.net/v/oceans.mp4";
 
         }
 
