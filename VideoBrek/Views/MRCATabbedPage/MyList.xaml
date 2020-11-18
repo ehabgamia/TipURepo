@@ -9,6 +9,7 @@
               x:Class="VideoBrek.Views.MRCATabbedPage.MyList"
               Title="My List">
     <ContentPage.Content>
+        <ScrollView>
         <Grid>
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <CollectionView x:Name="collectionViewMain" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" ItemsLayout="VerticalList" ItemsSource="{Binding  CollectionViewDataSource}">
@@ -47,7 +48,11 @@
                 HeightRequest="50"
                 WidthRequest="50"/>
             </StackLayout>
+
+
             <!--Edit to MyList Code-->
+
+
             <StackLayout Padding="0">
                 <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
                     <Grid>
@@ -69,7 +74,8 @@
                     </Grid>
                 </Frame>
 
-                <Frame>
+                <StackLayout Margin="0,-25,0,0">
+                <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*"/>
@@ -77,17 +83,199 @@
                         </Grid.ColumnDefinitions>
                         <StackLayout Grid.Column="0">
                             <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
-                                <Image Source="AKCorona" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                <Image Source="AKCorona33" VerticalOptions="FillAndExpand" Aspect="Fill"/>
                             </Frame>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                            <Label Text="Arvind Kejriwal : " TextColor="White" FontSize="18" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+                            <Label Text="'Delhi Covid Situation Should Be Under Control In 7-10 Days'" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            <Label Text="33k views . 5 days Ago" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                            <Label Text="NDTV NEWS" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
                         </StackLayout>
                     </Grid>
                 </Frame>
+                </StackLayout>
 
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="countdown22" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="COUNTDOWN" TextColor="White" VerticalOptions="FillAndExpand" FontAttributes="Bold" FontSize="18"/>
+                                <Label Text="(2019) Horror Movie Official Trailer" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                                <Label Text="24M views. 1 Year Ago" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                                <Label Text="Movie Trailer Source" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                            </StackLayout> 
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="Despacito" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="Luis Fonsi Despacito" TextColor="White" VerticalOptions="FillAndExpand" FontAttributes="Bold" FontSize="18"/>
+                                <Label Text="ft. Daddy Yankee" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                                <Label Text="7.5B views. 3 Years Ago" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                                <Label Text="Subtitles : Luis Fonsi" TextColor="White" VerticalOptions="FillAndExpand" FontSize="12"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="carry" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="5">
+                                <Label Text="YOUTUBE VS TIKTOK" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="FillAndExpand"/>
+                                <Label Text="ft. Carryminati" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="120M views. 6 Month Ago" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="Get an exclusive discount of 30% by using code on Arctic Fox website" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="heighlights" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="Sharma Hits Big" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="FillAndExpand"/>
+                                <Label Text="(210*! NOT OUT)" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="India Vs Pakistan - Heighlights" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="ICC Cricket World Cup - 2019" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="hondacbr" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="Honda cbr650r" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="FillAndExpand"/>
+                                <Label Text="Putting the extra 'r' In The cbr" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="5M Views. 2 Years Ago" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="Honda Motorcycles Europe" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="nonstop" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="'High Rateted Gabru'" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="FillAndExpand"/>
+                                <Label Text="52 non-stop Hits #2018 Mashup" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="6M Views. 2 Years Ago" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="T-Series Apna Punjab" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="tomandjerry" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="Tom And Jerry" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="FillAndExpand"/>
+                                <Label Text="HIC - CUP PUP" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="18M Views. 8 Years Ago" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="MovieCon . Animation" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,-25,0,0">
+                    <Frame BackgroundColor="Transparent" CornerRadius="20" HeightRequest="100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Frame BackgroundColor="Transparent" Padding="0" HeightRequest="100" WidthRequest="200" CornerRadius="8">
+                                    <Image Source="hollywood" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Margin="20,0,0,0" Spacing="0">
+                                <Label Text="Mashup Of Popluar Songs" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="FillAndExpand"/>
+                                <Label Text="Best English Songs" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="7.1M Views. 1 Years Ago" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                                <Label Text="Ahihi Musics" TextColor="White" FontSize="12" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
             </StackLayout>
                 
 
         </Grid>
 
-        
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
