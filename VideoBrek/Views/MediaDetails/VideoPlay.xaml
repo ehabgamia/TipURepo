@@ -2,7 +2,7 @@
 <ContentPage BackgroundColor="Blue" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:videoplayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" x:Class="VideoBrek.Views.MediaDetails.VideoPlay">
     <AbsoluteLayout BackgroundColor="Red" x:Name="ViewLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <!--<Image Aspect="Fill" Style="{StaticResource FastImageStyle}" Source="ThinkstockPhotos.jpg" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />-->
-        <videoplayer:VideoPlayer Source="{Binding SelectedAllMedia.AliasCloudUrl}" FillMode="ResizeAspectFill" Repeat="True" x:Name="videoPlayer" DisplayControls="True"  AutoPlay="True" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
+        <videoplayer:VideoPlayer FillMode="ResizeAspectFill" Repeat="True" x:Name="videoPlayer" DisplayControls="True"  AutoPlay="True" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
         <AbsoluteLayout  VerticalOptions="Start" HorizontalOptions="End" x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Padding="10">
             <Button Command="{Binding ClosedPresentPage}" FontSize="Medium" Text="X" FontAttributes="Bold" CornerRadius="13" HeightRequest="26" Padding="0" WidthRequest="26" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#6600" TextColor="White" x:Name="btnNext" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"></Button>
         </AbsoluteLayout>

@@ -1,13 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using VideoBrek.Extensions;
+﻿using System.ComponentModel;
 using VideoBrek.ViewModels.MRCATabbedPage.MediaDetails;
 using Xamarin.Forms;
-using YoutubeExplode;
-using YoutubeExplode.Models.MediaStreams;
 using static VideoBrek.Models.MediaHandlerModel;
 
 namespace VideoBrek.Views.MediaDetails
@@ -25,6 +18,8 @@ namespace VideoBrek.Views.MediaDetails
            
             base.BindingContext = vm = new VideoPlayViewModel(Navigation);
             vm.SelectedAllMedia = allMediaModel;
+            videoPlayer.Source = vm.SelectedAllMedia.AliasCloudUrl;
+            //vm.SelectedAllMedia.AliasCloudUrl = "http://vjs.zencdn.net/v/oceans.mp4";
 
         }
 

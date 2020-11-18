@@ -166,6 +166,7 @@ namespace VideoBrek.ViewModels.MRCATabbedPage
                 return;
             try
             {
+
                 Device.BeginInvokeOnMainThread(async () =>
                 {
                     IsLoaderRunning = true;
@@ -174,32 +175,30 @@ namespace VideoBrek.ViewModels.MRCATabbedPage
                     {
                         allMediaModel.Title = GetVideo.Title;
                         allMediaModel.Description = GetVideo.Description;
+
+                        var VideoMediaStreamInfos = await Task.Run(() => GetVideoMediaStreamInfosAsync(allMediaModel.CloudUrl));
+                        if (VideoMediaStreamInfos != null)
+                        {
+                            if (VideoMediaStreamInfos.Url != null)
+                            {
+                                allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Url;
+                                await Navigation.PushModalAsync(new NavigationPage(new Views.MediaDetails.MediaDetails(allMediaModel)));
+                                IsLoaderRunning = false;
+                            }
+                        }
                     }
-                    var VideoMediaStreamInfos = await Task.Run(() => GetVideoMediaStreamInfosAsync(allMediaModel.CloudUrl));
-                    if (VideoMediaStreamInfos.Muxed.FirstOrDefault() != null)
+                    else
                     {
-                        allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Muxed.FirstOrDefault().Url;
-                        await Navigation.PushModalAsync(new NavigationPage(new Views.MediaDetails.MediaDetails(allMediaModel)));
                         IsLoaderRunning = false;
+                        CrossToastPopUp.Current.ShowToastMessage("Video Details not getting...!", ToastLength.Short);
                     }
 
-
-                        //AllMediaModel allMediaModel = new AllMediaModel();
-                        //allMediaModel.Id = userMyListModel.Media.MediaId;
-                        //allMediaModel.Title = userMyListModel.Media.Title;
-                        //allMediaModel.Description = userMyListModel.Media.MediaDesc;
-                        //allMediaModel.CloudUrl = userMyListModel.Media.CloudMediaUrl;
-                        //allMediaModel.ThumbURL = "/thumbnails/" + userMyListModel.Media.Thumbnail;
-
-                        //await Navigation.PushModalAsync(new NavigationPage(new Views.MediaDetails.MediaDetails(allMediaModel)));
-                    });
-
+                });
             }
             catch (Exception ex)
             {
                 Console.Write(ex.Message);
                 IsLoaderRunning = false;
-                //Crashes.TrackError(ex);
             }
             finally
             {

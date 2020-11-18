@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using VideoBrek.Extensions;
 using YoutubeExplode;
-using YoutubeExplode.Models;
-using YoutubeExplode.Models.MediaStreams;
+using YoutubeExplode.Videos;
+using YoutubeExplode.Videos.Streams;
 
 namespace VideoBrek.Models
 {
     public class MediaHandlerModel
     {
-      static  YoutubeClient youtubeClient = new YoutubeClient();
+        static YoutubeClient youtubeClient = new YoutubeClient();
         public class GetMediasModel
         {
             public int DisplayOrder { get; set; }
@@ -32,7 +32,7 @@ namespace VideoBrek.Models
             public string AliasThumbURL
             {
                 //maxresdefault//sddefault
-                get { return !string.IsNullOrEmpty(CloudUrl) ? "https://img.youtube.com/vi/" + CloudUrl+ "/maxresdefault.jpg" : "https://www.prioritysoftware.com/wp-content/uploads/2015/02/xno-image.png.pagespeed.ic.TALCyIr8tu.webp"; }
+                get { return !string.IsNullOrEmpty(CloudUrl) ? "https://img.youtube.com/vi/" + CloudUrl + "/maxresdefault.jpg" : "https://www.prioritysoftware.com/wp-content/uploads/2015/02/xno-image.png.pagespeed.ic.TALCyIr8tu.webp"; }
             }
 
             //public string AliasCloudUrl
@@ -84,10 +84,10 @@ namespace VideoBrek.Models
         public static async Task<Video> GetVideoAsync(string Url)
         {
             Video resp = null;
-            youtubeClient = new YoutubeClient();
+            var youtube = new YoutubeClient();
             try
             {
-                resp = await youtubeClient.GetVideoAsync(Url);
+                resp = await youtube.Videos.GetAsync(Url);
                 return resp;
             }
             catch (Exception ex)
@@ -97,20 +97,45 @@ namespace VideoBrek.Models
             }
         }
 
-        public static async Task<MediaStreamInfoSet> GetVideoMediaStreamInfosAsync(string Url)
+        public static async Task<StreamInfoModel> GetVideoMediaStreamInfosAsync(string Url)
         {
-            youtubeClient = new YoutubeClient();
-            MediaStreamInfoSet resp = null;
+            var youtubeClient = new YoutubeClient();
+            StreamInfoModel streamInfoModel = null;
             try
             {
-                resp = await youtubeClient.GetVideoMediaStreamInfosAsync(Url);
-                return resp;
+                var streamManifest = await youtubeClient.Videos.Streams.GetManifestAsync(Url);
+                if (streamManifest != null)
+                {
+                    var streamInfo = streamManifest.GetMuxed().WithHighestVideoQuality();
+                    if (streamInfo != null)
+                    {
+                        streamInfoModel = new StreamInfoModel();
+                        streamInfoModel.Bitrate = streamInfo.Bitrate;
+                        streamInfoModel.Container = streamInfo.Container;
+                        streamInfoModel.Size = streamInfo.Size;
+                        streamInfoModel.Framerate = streamInfo.Framerate;
+                        streamInfoModel.Url = streamInfo.Url;
+                        streamInfoModel.Tag = streamInfo.Tag;
+                    }
+                }
+                return streamInfoModel;
             }
             catch (Exception ex)
             {
                 //Crashes.TrackError(ex);
-                return resp;
+                return null;
             }
+        }
+
+
+        public class StreamInfoModel
+        {
+            public Bitrate Bitrate { get; set; }
+            public Container Container { get; set; }
+            public FileSize Size { get; set; }
+            public Framerate Framerate { get; set; }
+            public string Url { get; set; }
+            public int Tag { get; set; }
         }
     }
 }
