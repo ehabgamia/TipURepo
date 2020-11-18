@@ -190,14 +190,24 @@ namespace VideoBrek.ViewModels.Explore
                     {
                         allMediaModel.Title = GetVideo.Title;
                         allMediaModel.Description = GetVideo.Description;
+
+                        var VideoMediaStreamInfos = await Task.Run(() => GetVideoMediaStreamInfosAsync(allMediaModel.CloudUrl));
+                        if (VideoMediaStreamInfos != null)
+                        {
+                            if (VideoMediaStreamInfos.Url != null)
+                            {
+                                allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Url;
+                                await Navigation.PushModalAsync(new NavigationPage(new MediaDetails(allMediaModel)));
+                                IsLoaderRunning = false;
+                            }
+                        }
                     }
-                    var VideoMediaStreamInfos = await Task.Run(() => GetVideoMediaStreamInfosAsync(allMediaModel.CloudUrl));
-                    if (VideoMediaStreamInfos.Muxed.FirstOrDefault() != null)
+                    else
                     {
-                        allMediaModel.AliasCloudUrl = VideoMediaStreamInfos.Muxed.FirstOrDefault().Url;
-                        await Navigation.PushModalAsync(new NavigationPage(new MediaDetails(allMediaModel)));
                         IsLoaderRunning = false;
+                        CrossToastPopUp.Current.ShowToastMessage("Video Details not getting...!", ToastLength.Short);
                     }
+
                 });
             }
             catch (Exception ex)

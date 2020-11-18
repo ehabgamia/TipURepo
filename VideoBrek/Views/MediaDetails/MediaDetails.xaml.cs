@@ -1,13 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using VideoBrek.Models;
-using VideoBrek.PCL.Common;
 using VideoBrek.ViewModels.Explore;
 using Xamarin.Forms;
-using YoutubeExplode;
-using YoutubeExplode.Models;
-using YoutubeExplode.Models.MediaStreams;
 using static VideoBrek.Models.MediaHandlerModel;
 
 namespace VideoBrek.Views.MediaDetails
