@@ -26,5 +26,16 @@ namespace VideoBrek.Views.MRCATabbedPage.Explore
         {
             base.OnDisappearing();
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var res = await this.DisplayAlert("Do you really want to exit the application?", "", "Yes", "No").ConfigureAwait(false);
+
+                if (res) System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+            });
+            return true;
+        }
     }
 }
