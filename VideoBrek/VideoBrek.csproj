@@ -52,6 +52,7 @@
     <Folder Include="Base\" />
     <Folder Include="Validator\" />
     <Folder Include="Resources\" />
+    <Folder Include="Xamarin\Forms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="**/*" />

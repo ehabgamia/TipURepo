@@ -9,6 +9,8 @@ namespace VideoBrek.Views.MRCATabbedPage
     public partial class Profile : ContentPage
     {
         public ProfileViewModel vm { get; set; }
+        public static bool CanGoBack { get; internal set; }
+
         public Profile()
         {
             InitializeComponent();
@@ -29,6 +31,11 @@ namespace VideoBrek.Views.MRCATabbedPage
             //masterPage.CurrentPage = masterPage.Children[1];
         }
 
+        internal static void GoBack()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
@@ -38,10 +45,13 @@ namespace VideoBrek.Views.MRCATabbedPage
         {
             vm.GotoLogOut();
         }
+
         async protected void privacyPolicyViewCellTapped(object sender, EventArgs e)
         {
             await vm.gotoPrivacyPolicy();
         }
+
+        
 
     }
 }

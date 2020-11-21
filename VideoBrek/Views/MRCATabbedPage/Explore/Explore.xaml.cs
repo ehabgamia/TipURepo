@@ -14,6 +14,7 @@ namespace VideoBrek.Views.MRCATabbedPage.Explore
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             base.BindingContext = vm = new ExploreViewModel(Navigation);
+            //BindingContext = Vm = new ExploreViewModel(Navigation);
         }
 
         protected override void OnAppearing()
@@ -25,7 +26,16 @@ namespace VideoBrek.Views.MRCATabbedPage.Explore
         {
             base.OnDisappearing();
         }
-       
 
+        protected override bool OnBackButtonPressed()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var res = await this.DisplayAlert("Do you really want to exit the application?", "", "Yes", "No").ConfigureAwait(false);
+
+                if (res) System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+            });
+            return true;
+        }
     }
 }

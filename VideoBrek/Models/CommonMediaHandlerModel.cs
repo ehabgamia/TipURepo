@@ -23,11 +23,11 @@ namespace VideoBrek.Models
         public class AllMediaModel
         {
             public int Id { get; set; }
-            public string Title { get; set; }
-            public string Description { get; set; }
-            public string CloudUrl { get; set; }
-            public string ThumbURL { get; set; }
-            public string AliasCloudUrl { get; set; }
+            public string? Title { get; set; }
+            public string? Description { get; set; }
+            public string? CloudUrl { get; set; }
+            public string? ThumbURL { get; set; }
+            public string? AliasCloudUrl { get; set; }
 
             public string AliasThumbURL
             {

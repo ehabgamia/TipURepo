@@ -1,4 +1,5 @@
-﻿using VideoBrek.ViewModels.MRCATabbedPage;
+﻿using System;
+using VideoBrek.ViewModels.MRCATabbedPage;
 using Xamarin.Forms;
 
 namespace VideoBrek.Views.MRCATabbedPage
@@ -10,7 +11,7 @@ namespace VideoBrek.Views.MRCATabbedPage
         {
             InitializeComponent();
             //NavigationPage.SetHasNavigationBar(this, false);
-            base.BindingContext = vm = new SearchViewModel(Navigation);
+            BindingContext = vm = new SearchViewModel(Navigation);
             vm = BindingContext as SearchViewModel;
         }
 
@@ -28,5 +29,6 @@ namespace VideoBrek.Views.MRCATabbedPage
         {
             //Logic to handle updated search bar text
         }
+        
     }
 }

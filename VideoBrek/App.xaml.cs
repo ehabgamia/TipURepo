@@ -17,6 +17,10 @@ namespace VideoBrek
     {
         #region Declaration
         public INavigation Navigation { get; set; }
+        public static object MyList { get; internal set; }
+        public static object MasterNavigationPage { get; internal set; }
+        public static object QuestionnaireOverviewPage { get; internal set; }
+
         SharedPreference _objShared = new SharedPreference();
         #endregion
 
@@ -118,5 +122,6 @@ namespace VideoBrek
 
             });
         }
+
     }
 }

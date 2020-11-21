@@ -119,7 +119,7 @@
                 <Setter Property="IsClippedToBounds" Value="True" />
                 <Setter Property="HasShadow" Value="True" />
                 <Setter Property="Padding" Value="0" />
-                <Setter Property="Margin" Value="10" />
+                <Setter Property="Margin" Value="3" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
 
@@ -184,7 +184,7 @@
                 <Setter Property="HorizontalOptions">Center</Setter>
                 <Setter Property="Margin" Value="0,5" />
                 <Setter Property="BorderColor">White</Setter>
-                <Setter Property="ImageSource" Value="ic_PlayNow.png" />
+                <Setter Property="ImageSource" Value="ic_PlayNow.png"/>
             </Style>
 
             <!-- Fast Image Styling-->

@@ -76,6 +76,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="..\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoBrek.Core\VideoBrek.Core.csproj">

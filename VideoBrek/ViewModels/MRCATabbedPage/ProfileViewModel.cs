@@ -11,6 +11,7 @@ using VideoBrek.Views.CustomPages;
 using Newtonsoft.Json;
 using Plugin.Toast;
 using Plugin.Toast.Abstractions;
+using VideoBrek.Views.MRCATabbedPage.Explore;
 using Xamarin.Forms;
 
 namespace VideoBrek.ViewModels.MRCATabbedPage
@@ -145,7 +146,7 @@ namespace VideoBrek.ViewModels.MRCATabbedPage
                     IsLoading = true;
                     Device.BeginInvokeOnMainThread(async () =>
                     {
-                        Application.Current.MainPage = new NavigationPage(new Views.MainPage());
+                        Application.Current.MainPage = new NavigationPage(new VideoBrek.Views.MRCATabbedPage.Explore.Explore());
                     });
                 });
             }
