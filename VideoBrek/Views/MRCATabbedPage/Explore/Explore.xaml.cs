@@ -14,6 +14,7 @@ namespace VideoBrek.Views.MRCATabbedPage.Explore
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             base.BindingContext = vm = new ExploreViewModel(Navigation);
+            //BindingContext = Vm = new ExploreViewModel(Navigation);
         }
 
         protected override void OnAppearing()
@@ -25,7 +26,5 @@ namespace VideoBrek.Views.MRCATabbedPage.Explore
         {
             base.OnDisappearing();
         }
-       
-
     }
 }

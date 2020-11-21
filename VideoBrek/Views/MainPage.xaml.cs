@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using VideoBrek.ViewModels.MainPage;
 using VideoBrek.Views.MRCATabbedPage;
 using Xamarin.Forms;
@@ -15,13 +16,15 @@ namespace VideoBrek.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             base.BindingContext = vm = new MainPageViewModel(Navigation);
+            //BindingContext = vm = new MainPageViewModel(Navigation);
+            //vm = BindingContext as MainPageViewModel;
         }
 
+        
         protected override void OnAppearing()
         {
             base.OnAppearing();
         }
-
         async void LogInButton_Clicked(object sender, System.EventArgs e)
         {
             await vm.gotoLogInPage();
@@ -31,6 +34,6 @@ namespace VideoBrek.Views
         {
             await vm.gotoSignUpPage();
         }
-
-    }
+    }  
+    
 }

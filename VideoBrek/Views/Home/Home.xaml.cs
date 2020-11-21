@@ -32,8 +32,13 @@ namespace VideoBrek.Views.Home
             profile.IconImageSource = "ic_Profile.png";
             profile.Title = "Profile";
             Children.Add(profile);
-
         }
-
+        protected override bool OnBackButtonPressed()
+        {
+             Navigation.PushAsync(new Home(),false);
+             base.OnBackButtonPressed();
+             return true;
+        }
     }
+
 }

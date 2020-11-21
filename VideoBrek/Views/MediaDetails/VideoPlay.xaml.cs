@@ -8,7 +8,7 @@ namespace VideoBrek.Views.MediaDetails
     [DesignTimeVisible(false)]
     public partial class VideoPlay : ContentPage
     {
-        public VideoPlayViewModel vm { get; set; }
+        public VideoPlayViewModel vm { get; set;}
         public VideoPlay(AllMediaModel allMediaModel)
 
         {

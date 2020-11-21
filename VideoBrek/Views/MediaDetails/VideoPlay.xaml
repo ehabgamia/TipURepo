@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="Blue" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:videoplayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" x:Class="VideoBrek.Views.MediaDetails.VideoPlay">
+<ContentPage BackgroundColor="Blue"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:videoplayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+             x:Class="VideoBrek.Views.MediaDetails.VideoPlay">
     <AbsoluteLayout BackgroundColor="Red" x:Name="ViewLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <!--<Image Aspect="Fill" Style="{StaticResource FastImageStyle}" Source="ThinkstockPhotos.jpg" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />-->
         <videoplayer:VideoPlayer FillMode="ResizeAspectFill" Repeat="True" x:Name="videoPlayer" DisplayControls="True"  AutoPlay="True" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
