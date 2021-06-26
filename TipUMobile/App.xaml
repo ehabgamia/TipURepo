@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:behaviors="clr-namespace:VideoBrek.Behaviour"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" mc:Ignorable="d" x:Class="VideoBrek.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Fonts -->
+            <OnPlatform x:Key="AkagiProSemiBold" x:TypeArguments="x:String">
+                <On Platform="Android">AkagiPro-Sm.otf#AkagiPro-Sm</On>
+                <On Platform="iOS">AkagiPro-SemiBold</On>
+                <On Platform="UWP">Assets/Fonts/AkagiPro-Sm.otf#AkagiPro-Sm</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="AkagiProMedium" x:TypeArguments="x:String">
+                <On Platform="Android">AkagiPro-Md.otf#AkagiPro-Md</On>
+                <On Platform="iOS">AkagiPro-Medium</On>
+                <On Platform="UWP">Assets/Fonts/AkagiPro-Md.otf#AkagiPro-Md</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="AkagiProExtraBold" x:TypeArguments="x:String">
+                <On Platform="Android">AkagiPro-Eb.otf#AkagiPro-Eb</On>
+                <On Platform="iOS">AkagiPro-ExtraBold</On>
+                <On Platform="UWP">Assets/Fonts/AkagiPro-Eb.otf#AkagiPro-Eb</On>
+            </OnPlatform>
+
+            <!-- Font Style -->
+            <Style x:Key="AkagiProLightMediumFontStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProMedium}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style x:Key="AkagiProLightSmallFontStyle" BasedOn="{StaticResource AkagiProLightMediumFontStyle}" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+
+            <!-- Tab bar color -->
+            <Color x:Key="TabBarColor">#25262D</Color>
+            <!--<Color x:Key="SelectedTabBarcolor">#3F51B5</Color>-->
+
+            <!-- Onboarding enabled button color -->
+            <Color x:Key="AccentColor">#1976D2</Color>
+
+            <!-- Light Blue color on Nav -->
+            <Color x:Key="NavigationPrimary">#25262D</Color>
+
+            <!-- Dark Blue/Purple Background Color -->
+            <Color x:Key="BackgroundColor">#000000</Color>
+
+            <!-- Light Gray color -->
+            <Color x:Key="ColorLightGray">#d3d3d3</Color>
+
+            <!-- Light Gray color  -->
+            <Color x:Key="ColorDarkGray">#a9a9a9</Color>
+
+            <!-- Downriver color -->
+            <Color x:Key="ColorDownriver">#0C2E5A</Color>
+
+            <!-- Athens Gray color -->
+            <Color x:Key="ColorAthensGray">#DCDDDD</Color>
+            <Color x:Key="LineColor">#bababa</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="ErrorColor">#ff5252</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarTextColor" Value="White" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+            </Style>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            </Style>
+
+            <!-- This is for the side panels of the background that are not in the scope of the content page background -->
+            <Style TargetType="TabbedPage" x:Key="AppBackgroundColor">
+                <Setter Property="BackgroundColor" Value="#0F243C" />
+            </Style>
+
+            <Style x:Key="ItemPageLabelForCarouselView" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProExtraBold}" />
+            </Style>
+
+            <Style x:Key="ItemPageLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+                <!--<Setter Property="FontAttributes" Value="Bold" />-->
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProExtraBold}" />
+            </Style>
+
+            <!-- Movie Card Styles-->
+            <Style x:Key="MovieCardTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProSemiBold}" />
+            </Style>
+
+            <Style x:Key="MovieCardYear" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorDarkGray}" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProMedium}" />
+            </Style>
+
+            <!-- Movie Card Styles-->
+            <Style x:Key="NormalTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorDarkGray}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProMedium}" />
+            </Style>
+
+            <Style x:Key="MovieCardFrame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="3" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+
+            <Style x:Key="MovieCardBackgroundColor" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+
+            <!-- Styles used in Onboarding Pages -->
+            <Color x:Key="ButtonAccentColor">#2196F3</Color>
+            <x:Double x:Key="2xDefaultMargin">32</x:Double>
+            <x:Double x:Key="4xDefaultMargin">64</x:Double>
+            <x:Double x:Key="Default2Margin">24</x:Double>
+            <x:Double x:Key="DefaultMargin">16</x:Double>
+
+            <Style x:Key="DefaultButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProMedium}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Padding">
+                    <Thickness Left="{StaticResource Default2Margin}" Right="{StaticResource Default2Margin}" />
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource ButtonAccentColor}" />
+            </Style>
+            <Style x:Key="AccentColorButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonAccentColor}" />
+                <Setter Property="TextColor">White</Setter>
+            </Style>
+            <Style x:Key="Accent2ColorButtonStyle" BasedOn="{StaticResource AccentColorButtonStyle}" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+                <Setter Property="CornerRadius">5</Setter>
+                <Setter Property="HeightRequest">50</Setter>
+            </Style>
+            <Style x:Key="TransparentButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius">5</Setter>
+                <Setter Property="HeightRequest">50</Setter>
+                <Setter Property="BorderWidth">1</Setter>
+                <Setter Property="HeightRequest">50</Setter>
+                <Setter Property="BackgroundColor">Transparent</Setter>
+                <Setter Property="BorderColor">White</Setter>
+                <Setter Property="TextColor">White</Setter>
+            </Style>
+
+
+            <!--<Style x:Key="PlayNowButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius">5</Setter>
+                <Setter Property="HeightRequest">40</Setter>
+                <Setter Property="WidthRequest">130</Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+                <Setter Property="TextColor">White</Setter>
+                <Setter Property="HorizontalOptions">Start</Setter>
+                <Setter Property="Margin" Value="0,10" />
+                <Setter Property="ImageSource" Value="ic_PlayNow.png" />
+            </Style>-->
+
+            <Style x:Key="PlayNowButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius">5</Setter>
+                <Setter Property="HeightRequest">40</Setter>
+                <Setter Property="WidthRequest">130</Setter>
+                <Setter Property="BorderWidth">2</Setter>
+                <Setter Property="BackgroundColor" Value="#77000000}" />
+                <Setter Property="TextColor">White</Setter>
+                <Setter Property="HorizontalOptions">Center</Setter>
+                <Setter Property="Margin" Value="0,5" />
+                <Setter Property="BorderColor">White</Setter>
+                <Setter Property="ImageSource" Value="ic_PlayNow.png"/>
+            </Style>
+
+            <!-- Fast Image Styling-->
+            <Style x:Key="FastImageStyle" TargetType="ffimageloading:CachedImage">
+                <Setter Property="Aspect">Fill</Setter>
+                <Setter Property="HeightRequest">180</Setter>
+                <Setter Property="DownsampleToViewSize">True</Setter>
+                <!--AspectFill-->
+            </Style>
+
+            <Style x:Key="BackButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="FilterText" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="Margin" Value="35,0,20,40" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProMedium}" />
+            </Style>
+
+            <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="White" />
+                <!-- just an example of other things that can be in here -->
+                <Setter Property="NavigationPage.BackButtonTitle" Value="" />
+            </Style>
+                   <!--Validation Error Label-->
+              <Style x:Key="EntryStyle" TargetType="{x:Type Entry}">
+                <Setter Property="FontFamily" Value="{StaticResource AkagiProMedium}"/>
+                <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"
+                        Value="True" />
+                <Setter Property="behaviors:LineColorBehavior.LineColor"
+                        Value="{StaticResource BlackColor}" />
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" 
+                             Value="True">
+                        <Setter Property="Opacity" Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+                 <Style x:Key="ValidationErrorLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{StaticResource ErrorColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>
