@@ -24,16 +24,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
     <Folder Include="Views\MRCATabbedPage\" />
     <Folder Include="Views\MRCATabbedPage\LibraryPages\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Views\LogIn\" />
     <Folder Include="Views\SignUp\" />
     <Folder Include="Views\Home\" />
     <Folder Include="ViewModels\MainPage\" />
-    <Folder Include="ViewModels\LogIn\" />
     <Folder Include="ViewModels\SignUp\" />
     <Folder Include="PCL\" />
     <Folder Include="PCL\Common\" />
@@ -67,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Base\BaseContentPage.cs" />
+    <Compile Remove="ViewModels\TestPageViewModel.cs" />
+    <Compile Remove="Views\TestPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Base\BaseContentPage.cs" />
@@ -79,5 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MediaData.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\LogIn\TestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
