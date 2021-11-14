@@ -13,6 +13,7 @@ using Xamarin.Forms.Xaml;
 using VideoBrek.Views.LogIn;
 using TipUMobile.Views.SignUp;
 using TipUMobile.Views;
+using Xamarin.Forms.Internals;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace VideoBrek
@@ -72,7 +73,7 @@ namespace VideoBrek
                 "CarouselView_Experimental",
                 "IndicatorView_Experimental"
             });
-            MainPage = new Xamarin.Forms.NavigationPage(new TestPage());
+            MainPage = new Xamarin.Forms.NavigationPage(new LogIn());
         }
 
         protected override void OnStart()
